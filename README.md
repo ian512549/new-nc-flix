@@ -1,32 +1,38 @@
-# Northcoders Rentakls
+# NC-flix
 
-With the boom in vinyls Northcoders has decided to get ahead of the the next retro trend, VHS rentals! Our next business venture clearly will need a database to keep track of video tape stock, rentals and customers.
+Video streaming services are all well and good, but they lack a certain physical quality. Not to miss out on a questionable business venture, Northcoders is opening bring back the video rental store!
 
-So far we have created the following tables:
+Business is somewhat slow at the moment (surprisingly!) so it makes sense to thinkning about how we store our data as a business. At the moment we have the following three tables:
 
--   Movies
+-   stores
 
--   Stock
+-   customers
 
--   Customers
+-   movies
 
-# recap
+## Task 1
 
-1. Query the database get all the movie titles which were released in the 21st century.
+1. Query the database to retrieve all of the movie titles that were released in the 21st century.
 
 2. Query the database to find the oldest customer.
 
-3. Query the database to find the total value of all of the stock, where the film was released in the 1980s.
+3. Query the database to find the average rating of the movies released in the 1980s.
 
-## Many to Many
+4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. \_Note that you'll want to ensure that you can run. **ADD NOTE ABOUT SCRIPT**
 
-4. Create a new table `genres` table.
-   Each genre will need the following:
+## Task 2
 
--   genre_slug
--   description
+1. Create a `stock` table with the following columns:
 
-5. Insert genre data into the genre table
+-   `stock_id` - PK
+-   `store_id` - FK
+-   `movie_id` - FK
+
+2. Insert some data into this table. You'll want >10 rows.
+
+## Task 3
+
+1. Create a `genres` table with the following data:
 
 | genre_slug | description                                   |
 | ---------- | --------------------------------------------- |
@@ -37,35 +43,46 @@ So far we have created the following tables:
 | action     | Shooty shooty punchy punchy                   |
 | drama      | Plot driven story time                        |
 
-6. Create a junction table movies_genres which maps the movies to their appropriate genres.
+2. Movies can often be associated with more than one genre. Create a this many-many relationsip between the `genres` table and the `movies`
 
-7. Query the database to find the number of films in stock in each genre.
+## Task 4
 
-8. Query the database to find the average rating for films in the family genre made before 2000.
+1. Query the database to find the number of films in stock in each genre.
 
-## Subqueries, unions and except
+2. Query the database to find the average rating for films in stock in Newcastle.
 
-9. Query the database to find retrieve all the fantasy film titles which have a rating greater than the average all with the number of copies we own.
+3. Query the database to retrieve all the films released in the 90s which have a rating greater than the total average.
 
-10. Query the database to find the amount copies we have of the top rated film of the 5 most recently released films we own.
+4. Query the database to find the amount copies in stock of the top rated film of the five most recently released films.
 
-11. Query the database to find a list of all the locations customers live in which don't contain a store.
+5. Query the database to find a list of all the locations customers live in which don't contain a store.
 
-12. Of the stores which exist in locations customers exist, calculate which has the largest catalogue of stock. What is the most abundant genre?
+6. Of the stores which exist in locations customers exist, calculate which has the largest catalogue of stock. What is the most abundant genre?
 
-## Windowing
+## Task 5
 
-13. Create an output which gives us the following information:
-    a) store_id, location, number of customers in the same location
-    b) number of films available in store
-    c) most valued customer (customer with most rentals)
-    d) most popular film (film with most rentals)
-    d) average rating of store (calculated as average of all films in store)
+1. Query the database to find the store with store with the most copies of sequels. _Note: For now let's assume you can tell if a film is a sequel based on it's title._
 
-TODO:
+2. This is likely not a good way to identify sequels going forward. Alter the table to track this information better and then update previous query to make use of this new structure.
 
--   windowing
+## Task 6
 
--   coalesce
+1. Design a way of storing information on rentals. A rental should track the following information:
 
--
+    - rental_id
+    - stock_id
+    - rental_start
+    - rental_end
+    - customer_id
+
+    Add some rental rows we can query later.
+
+2. Create an output with the following information:
+
+-   store_id, location, number of customers in the same location
+-   number of films available in store
+-   most valued customer (customer with most rentals)
+-   most popular film (film with most rentals)
+-   average rating of store (calculated as average of all films in store)
+
+## Task 7
