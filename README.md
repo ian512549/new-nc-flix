@@ -18,7 +18,9 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 3. Query the database to find the average rating of the movies released in the 1980s.
 
-4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. \_Note that you'll want to ensure that you can run. **ADD NOTE ABOUT SCRIPT**
+4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. \_Note that you'll want to ensure that you can run.
+
+_**If you want to run the updates multiple times without going bankrupt, the data will need to be reset. We've added a bash script that will run all of the *.sql files in the ./db folder. Try running the command ./run-all.sh from your terminal in the root of this repository. This will save the output of each *.sql file in the ./db directory to a \*.txt file of the same name.**_
 
 ## Task 2
 
