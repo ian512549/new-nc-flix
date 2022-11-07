@@ -116,19 +116,19 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 3. Query the database to retrieve all the films released in the 90s which have a rating greater than the total average.
 
-4. Query the database to find the amount of copies in stock of the top rated film of the five most recently released films.
+4. Query the database to find the amount of copies in stock, across **all** stores, of the top rated film of the five most recently released films.
 
-5. Query the database to find a list of all the locations customers live in which don't contain a store.
+5. Query the database to find a list of all the locations customers live in which **don't** contain a store.
 
-6. Of the stores which exist in locations that have customers, calculate which store has the largest catalogue of stock. What is the most abundant genre?
+6. Of the stores which exist in locations that have customers, calculate which store has the largest catalogue of stock. What is the most abundant genre in that store?
 
 ## Task 5
 
-1. Query the database to find the store with store with the most copies of sequels.
+1. Query the database to find the store with store with the highest total copies of sequels.
 
    > _Note: For now let's assume you can tell if a film is a sequel if the title contains something like 'II' or 'VI'._
 
-2. This is likely not a good way to identify sequels going forward. Alter the table to track this information better and then update previous query to make use of this new structure.
+2. This is likely not a good way to identify sequels going forward. Alter the movies table to track this information better and then update previous query to make use of this new structure.
 
 ## Task 6
 
@@ -146,6 +146,6 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 - store_id, location, number of customers in the same location
 - number of films available in store
-- most valued customer (customer with most rentals)
+- most valued customer (customer with the most rentals)
 - most popular film (film with most rentals)
-- average rating of store (calculated as average of all films in store)
+- average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
