@@ -2,7 +2,7 @@
 
 \echo '\n Summary of store and customer details:'
 
-\echo '\n The amountof films available in each store is:'
+\echo '\n The amount of films available in each store is:'
 
 \echo '\n The most valued customer is:'
 

@@ -127,3 +127,17 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 - most valued customer (customer with the most rentals)
 - most popular film (film with most rentals)
 - average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
+
+## Task 7
+
+1. We are evaluating the quality of the films we currently have in our database. Management has asked you to create an output with the following information:
+
+- Genre name
+- Average rating for the genre (rounded to 1 decimal place)
+
+2. Management is now looking into the quality of stock in the **Manchester** store particularly. Create an output that that shows:
+
+- Genre name
+- Average rating for the genre (rounded to 1 decimal place)
+
+**_If the store stocks multiple of the same film you should be using just one rating in your calculation of the average._**
