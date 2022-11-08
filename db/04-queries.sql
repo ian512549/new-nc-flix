@@ -6,10 +6,10 @@
 
 \echo '\n Here are all the films made in 90s with above average rating available in Leeds'
 
-\echo '\n Here is the number of copies of the top rated film of the 5 most recently released films we have in stock:'
+\echo '\n Here is the number of copies of the top rated film of the 5 most recently released films we have in stock across all stores:'
 
 \echo '\n These are the locations where our customers live which dont have stores:'
 
 \echo '\n This store has the highest quantity of stock:'
 
-\echo '\n ...and this is the most abundant genre:'
+\echo '\n ...and this is the most abundant genre in that store:'

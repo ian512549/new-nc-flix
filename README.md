@@ -2,13 +2,13 @@
 
 Video streaming services are all well and good, but they lack a certain physical quality. Not to miss out on a questionable business venture, Northcoders is opening bring back the video rental store!
 
-Business is somewhat slow at the moment (surprisingly!) so it makes sense to thinkning about how we store our data as a business. At the moment we have the following three tables:
+Business is somewhat slow at the moment (surprisingly!) so it makes sense to thinking about how we store our data as a business. At the moment we have the following three tables:
 
--   stores
+- stores
 
--   customers
+- customers
 
--   movies
+- movies
 
 ## Task 1
 
@@ -16,75 +16,140 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 2. Query the database to find the oldest customer.
 
-3. Query the database to find the average rating of the movies released in the 1980s.
+3. Query the database to find the average rating of the movies released in the 1980s. **If there are any `null` ratings you should treat them as a 0 rating**
 
-4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table.
+4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. **As this is a monetary value make sure it is rounded to 2 decimal places**
 
-_**If you want to run the updates multiple times without going bankrupt, the data will need to be reset. We've added a bash script that will run all of the *.sql files in the ./db folder. Try running the command ./run-all.sh from your terminal in the root of this repository. This will save the output of each *.sql file in the ./db directory to a \*.txt file of the same name.**_
+> _**If you want to run the updates multiple times without going bankrupt, the data will need to be reset. We've added a bash script that will run all of the *.sql files in the ./db folder. Try running the command `./run-all.sh` from your terminal in the root of this repository. This will save the output of each *.sql file in the ./db directory to a \*.txt file of the same name.**_
 
 ## Task 2
 
+We need a way to keep track of stock across our stores. Each individual VHS tape (very retro, we know), should have it's own `stock_id` so that we know which copy is being rented. Also if a copy gets damaged/lost this means we'll know which one it is. Stores can (and should) stock multiple copies of the same film.
+
 1. Create a `stock` table with the following columns:
 
--   `stock_id` - PK
--   `store_id` - FK
--   `movie_id` - FK
+- `stock_id` - PK
+- `store_id` - FK
+- `movie_id` - FK
 
-2. Insert some data into this table. You'll want >10 rows.
+2. Insert some data into this table. You'll want at least 15 rows (but the more the better) and some stores should have multiple copies. Here's some information to get you started:
+
+- The Leeds store has 2 copies of Toy Story, a copy of Pulp Fiction, 3 copies of Highlander and 2 copies of Star Wars episodes IV and IX.
+- The Manchester store has 1 copy of Toy Story, 2 copies of each of the Back To The Future films and a copy of Taxi Driver
+- The Newcastle store has 1 copy of Girl, Interrupted, 2 copies of Pulp Fiction and 1 copy of the Care Bears movie
+- The Birmingham store has 1 copy of each of the Star Wars films (I, IV and IX), 1 copy of Toy Story and 2 copies of the Breakfast Club
 
 ## Task 3
 
 1. Create a `genres` table with the following data:
 
-| genre_slug | description                                   |
-| ---------- | --------------------------------------------- |
-| family     | Fun for everyone!                             |
-| comedy     | A giggle a minute                             |
-| romance    | I feel it in my fingers, I feel it in my toes |
-| fantasy    | There be elves and and witches                |
-| action     | Shooty shooty punchy punchy                   |
-| drama      | Plot driven story time                        |
+| genre_slug | description                                                    |
+| ---------- | -------------------------------------------------------------- |
+| family     | Fun for everyone!                                              |
+| comedy     | A giggle a minute                                              |
+| romance    | I feel it in my fingers, I feel it in my toes                  |
+| fantasy    | There be elves and and witches                                 |
+| action     | Shooty shooty punchy punchy                                    |
+| drama      | Plot driven story time                                         |
+| crime      | Watch out, there's gangsters about                             |
+| sci_fi     | Your scientists were so preoccupied with whether they could... |
 
-2. Movies can often be associated with more than one genre. Create a this many-many relationsip between the `genres` table and the `movies`
+2. Movies can often be associated with more than one genre. Create a this many-many relationsip between the `genres` table and the `movies`.
+
+3. Insert some data about the film genres. Feel free to use the information in the table below:
+
+| Film                               | Genres               |
+| ---------------------------------- | -------------------- |
+| Ghostbusters II                    | Family, Comedy       |
+| The Breakfast Club                 | Comedy, Drama        |
+| Todo Sobre Mi Madre                | Comedy, Drama        |
+| The Lion King II: Simba''s Pride   | Family               |
+| The Care Bears Movie               | Family               |
+| Tron                               | Fantasy, Action      |
+| Highlander                         | Fantasy, Action      |
+| Cleopatra                          | Romance, Drama       |
+| Catch Me If You Can                | Comedy, Drama, Crime |
+| Taxi Driver                        | Drama, Crime         |
+| The Princess Switch                | Comedy, Romance      |
+| Girl, Interrupted                  | Drama                |
+| The Fellowship of the Ring         | Fantasy, Action      |
+| Episode I - The Phantom Menace     | Action, Sci-Fi       |
+| Episode IV - A New Hope            | Action, Sci-Fi       |
+| Episode IX - The Rise of Skywalker | Action, Sci-Fi       |
+| Back to the Future                 | Comedy, Sci-Fi       |
+| Back to the Future Part II         | Comedy, Sci-Fi       |
+| The Godfather                      | Drama, Crime         |
+| Raiders of the Lost Ark            | Action, Fantasy      |
+| Pulp Fiction                       | Crime                |
+| Toy Story                          | Family               |
+| Groundhog Day                      | Comedy, Romance      |
+| A Fish Called Wanda                | Comedy, Crime        |
+| Independance Day                   | Action, Sci-Fi       |
 
 ## Task 4
 
-1. Query the database to find the number of films in stock in each genre.
+**If there are any `null` ratings you should treat them as a 0 rating!**
+
+1. Query the database to find the number of films in stock for each genre.
 
 2. Query the database to find the average rating for films in stock in Newcastle.
 
 3. Query the database to retrieve all the films released in the 90s which have a rating greater than the total average.
 
-4. Query the database to find the amount copies in stock of the top rated film of the five most recently released films.
+4. Query the database to find the amount of films in stock, across **all** stores, of the top rated film of the five most recently released films.
 
-5. Query the database to find a list of all the locations customers live in which don't contain a store.
+5. Query the database to find a list of all the locations customers live in which **don't** contain a store.
 
-6. Of the stores which exist in locations customers exist, calculate which has the largest catalogue of stock. What is the most abundant genre?
+6. Query the database to find a list of all the locations we have influence over (locations of stores and/or customers), **there should be no repeated data**.
+
+7. Of the stores which exist in locations that have customers, calculate which store has the largest catalogue of stock. What is the most abundant genre in that store?
 
 ## Task 5
 
-1. Query the database to find the store with store with the most copies of sequels. _Note: For now let's assume you can tell if a film is a sequel based on it's title._
+1. Query the database to find the store with store with the highest total copies of sequels.
 
-2. This is likely not a good way to identify sequels going forward. Alter the table to track this information better and then update previous query to make use of this new structure.
+   > _Note: For now let's assume you can tell if a film is a sequel if the title contains something like 'II' or 'VI'._
+
+2. This is likely not a good way to identify sequels going forward. Alter the movies table to track this information better and then update previous query to make use of this new structure.
 
 ## Task 6
 
 1. Design a way of storing information on rentals. A rental should track the following information:
 
-    - rental_id
-    - stock_id
-    - rental_start
-    - rental_end
-    - customer_id
+   - rental_id
+   - stock_id
+   - rental_start
+   - rental_end
+   - customer_id
 
-    Add some rental rows we can query later.
+   Add some rental rows we can query later.
 
 2. Create an output with the following information:
 
--   store_id, location, number of customers in the same location
--   number of films available in store
--   most valued customer (customer with most rentals)
--   most popular film (film with most rentals)
--   average rating of store (calculated as average of all films in store)
+**If there are any `null` ratings you should treat them as a 0 rating!**
+
+- store_id, location, number of customers in the same location
+- number of films available in store
+- most valued customer (customer with the most rentals)
+- most popular film (film with most rentals)
+- average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
+
+3. Jersey the puppy is having a movie night with all her puppy pals! Create an output which shows all the films in our database with an additional column that represents whether if a film is suitable or not.
+
+**A film is suitable if the customer is old enough to watch the movie according the the age classification. Films rated `U` are suitable for all ages.**
 
 ## Task 7
+
+1. We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
+
+- Genre name
+- Film title
+- Rating
+
+2. Management is now trying to refine the quality of stock in the **Manchester** store particularly. Create an output that that shows:
+
+- Genre name
+- Film title
+- Rating
+
+**_If the store doesn't stock any films of a certain genre then do not include that genre in the output table._**
