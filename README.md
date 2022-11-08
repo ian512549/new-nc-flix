@@ -16,7 +16,7 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 2. Query the database to find the oldest customer.
 
-3. Query the database to find the average rating of the movies released in the 1980s.
+3. Query the database to find the average rating of the movies released in the 1980s. **If there are any `null` ratings you should treat them as a 0 rating**
 
 4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. **As this is a monetary value make sure it is rounded to 2 decimal places**
 
@@ -88,6 +88,8 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 ## Task 4
 
+**If there are any `null` ratings you should treat them as a 0 rating!**
+
 1. Query the database to find the number of films in stock for each genre.
 
 2. Query the database to find the average rating for films in stock in Newcastle.
@@ -98,7 +100,9 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 5. Query the database to find a list of all the locations customers live in which **don't** contain a store.
 
-6. Of the stores which exist in locations that have customers, calculate which store has the largest catalogue of stock. What is the most abundant genre in that store?
+6. Query the database to find a list of all the locations we have influence over (locations of stores and/or customers), **there should be no repeated data**.
+
+7. Of the stores which exist in locations that have customers, calculate which store has the largest catalogue of stock. What is the most abundant genre in that store?
 
 ## Task 5
 
@@ -122,22 +126,30 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 2. Create an output with the following information:
 
+**If there are any `null` ratings you should treat them as a 0 rating!**
+
 - store_id, location, number of customers in the same location
 - number of films available in store
 - most valued customer (customer with the most rentals)
 - most popular film (film with most rentals)
 - average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
 
+3. Jersey the puppy is having a movie night with all her puppy pals! Create an output which shows all the films in our database with an additional column that represents whether if a film is suitable or not.
+
+**A film is suitable if the customer is old enough to watch the movie according the the age classification. Films rated `U` are suitable for all ages.**
+
 ## Task 7
 
-1. We are evaluating the quality of the films we currently have in our database. Management has asked you to create an output with the following information:
+1. We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
 
 - Genre name
-- Average rating for the genre (rounded to 1 decimal place)
+- Film title
+- Rating
 
-2. Management is now looking into the quality of stock in the **Manchester** store particularly. Create an output that that shows:
+2. Management is now trying to refine the quality of stock in the **Manchester** store particularly. Create an output that that shows:
 
 - Genre name
-- Average rating for the genre (rounded to 1 decimal place)
+- Film title
+- Rating
 
-**_If the store stocks multiple of the same film you should be using just one rating in your calculation of the average._**
+**_If the store doesn't stock any films of a certain genre then do not include that genre in the output table._**
