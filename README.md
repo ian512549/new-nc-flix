@@ -24,42 +24,20 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 ## Task 2
 
+We need a way to keep track of stock across our stores. Each individual VHS tape (very retro, we know), should have it's own `stock_id` so that we know which copy is being rented. Also if a copy gets damaged/lost this means we'll know which one it is. Stores can (and should) stock multiple copies of the same film.
+
 1. Create a `stock` table with the following columns:
 
 - `stock_id` - PK
 - `store_id` - FK
 - `movie_id` - FK
-- `copies` - INT
 
-2. Insert some data into this table. You'll want at least 10 rows, feel free to use the stock information provided below:
+2. Insert some data into this table. You'll want at least 15 rows (but the more the better) and some stores should have multiple copies. Here's some information to get you started:
 
-| Movie ID | Film                               | Leeds(ID: 1) | Manhester(ID: 2) | Newcastle(ID: 3) | Birmingham(ID: 4) |
-| -------- | ---------------------------------- | ------------ | ---------------- | ---------------- | ----------------- |
-| 1        | Ghostbusters II                    | 2            | 1                | 2                | 1                 |
-| 2        | The Breakfast Club                 | 3            | 2                | 2                | 0                 |
-| 3        | Todo Sobre Mi Madre                | 0            | 1                | 3                | 2                 |
-| 4        | The Lion King II: Simba''s Pride   | 2            | 0                | 3                | 3                 |
-| 5        | The Care Bears Movie               | 0            | 1                | 2                | 0                 |
-| 6        | Tron                               | 0            | 3                | 1                | 1                 |
-| 7        | Highlander                         | 1            | 0                | 1                | 2                 |
-| 8        | Cleopatra                          | 2            | 3                | 1                | 1                 |
-| 9        | Catch Me If You Can                | 1            | 2                | 2                | 0                 |
-| 10       | Taxi Driver                        | 0            | 0                | 5                | 1                 |
-| 11       | The Princess Switch                | 0            | 1                | 3                | 0                 |
-| 12       | Girl, Interrupted                  | 3            | 2                | 1                | 2                 |
-| 13       | The Fellowship of the Ring         | 0            | 0                | 5                | 0                 |
-| 14       | Episode I - The Phantom Menace     | 3            | 5                | 2                | 2                 |
-| 15       | Episode IV - A New Hope            | 2            | 0                | 2                | 1                 |
-| 16       | Episode IX - The Rise of Skywalker | 0            | 1                | 3                | 1                 |
-| 17       | Back to the Future                 | 1            | 0                | 4                | 1                 |
-| 18       | Back to the Future Part II         | 5            | 2                | 2                | 2                 |
-| 19       | The Godfather                      | 0            | 3                | 3                | 1                 |
-| 20       | Raiders of the Lost Ark            | 2            | 0                | 2                | 2                 |
-| 21       | Pulp Fiction                       | 0            | 0                | 0                | 0                 |
-| 22       | Toy Story                          | 2            | 4                | 3                | 2                 |
-| 23       | Groundhog Day                      | 1            | 0                | 2                | 4                 |
-| 24       | A Fish Called Wanda                | 0            | 2                | 1                | 6                 |
-| 25       | Independance Day                   | 0            | 1                | 0                | 2                 |
+- The Leeds store has 2 copies of Toy Story, a copy of Pulp Fiction, 3 copies of Highlander and 2 copies of Star Wars episodes IV and IX.
+- The Manchester store has 1 copy of Toy Story, 2 copies of each of the Back To The Future films and a copy of Taxi Driver
+- The Newcastle store has 1 copy of Girl, Interrupted, 2 copies of Pulp Fiction and 1 copy of the Care Bears movie
+- The Birmingham store has 1 copy of each of the Star Wars films (I, IV and IX), 1 copy of Toy Story and 2 copies of the Breakfast Club
 
 ## Task 3
 
@@ -95,9 +73,9 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 | The Princess Switch                | Comedy, Romance      |
 | Girl, Interrupted                  | Drama                |
 | The Fellowship of the Ring         | Fantasy, Action      |
-| Episode I - The Phantom Menace     | Fantasy, Action      |
-| Episode IV - A New Hope            | Fantasy, Action      |
-| Episode IX - The Rise of Skywalker | Fantasy, Action      |
+| Episode I - The Phantom Menace     | Action, Sci-Fi       |
+| Episode IV - A New Hope            | Action, Sci-Fi       |
+| Episode IX - The Rise of Skywalker | Action, Sci-Fi       |
 | Back to the Future                 | Comedy, Sci-Fi       |
 | Back to the Future Part II         | Comedy, Sci-Fi       |
 | The Godfather                      | Drama, Crime         |
@@ -116,7 +94,7 @@ Business is somewhat slow at the moment (surprisingly!) so it makes sense to thi
 
 3. Query the database to retrieve all the films released in the 90s which have a rating greater than the total average.
 
-4. Query the database to find the amount of copies in stock, across **all** stores, of the top rated film of the five most recently released films.
+4. Query the database to find the amount of films in stock, across **all** stores, of the top rated film of the five most recently released films.
 
 5. Query the database to find a list of all the locations customers live in which **don't** contain a store.
 
