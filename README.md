@@ -1,8 +1,8 @@
 # NC-flix
 
-Video streaming services are all well and good, but they lack a certain physical quality. Not to miss out on a questionable business venture, Northcoders is opening bring back the video rental store!
+Video streaming services are all well and good, but they lack a certain physical quality. Not to miss out on a questionable business venture, Northcoders is bringing back the **video rental store**!
 
-Business is somewhat slow at the moment (surprisingly!) so it makes sense to thinking about how we store our data as a business. At the moment we have the following three tables:
+Business is somewhat slow at the moment (surprisingly!) so we've been tasked to start thinking about how we store our data. At the moment we have the following three tables:
 
 - stores
 
