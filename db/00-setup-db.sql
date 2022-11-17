@@ -47,7 +47,7 @@ VALUES
 
 
 INSERT INTO movies
-(title, release_date, rating, cost)
+(title, release_date, rating, cost, classification)
 VALUES
 ('Ghostbusters II', '1989-12-01', null, 1.50, 'U'),
 ('The Breakfast Club', '1985-06-07', 3, 2.00, '12'),
@@ -72,5 +72,5 @@ VALUES
 ('Pulp Fiction', '1994-05-21', 5, 2.00, null),
 ('Toy Story', '1995-11-19', 10, 1.50, 'U'),
 ('Groundhog Day', '1993-02-12', 7, 1.50, 'U'),
-('A Fish Called Wanda', '1988-07-07', 7, 1.50, 'null'),
+('A Fish Called Wanda', '1988-07-07', 7, 1.50, null),
 ('Independance Day', '1996-07-03', 7, 1.00, '15');
