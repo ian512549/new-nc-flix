@@ -54,7 +54,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 | crime      | Watch out, there's gangsters about                             |
 | sci_fi     | Your scientists were so preoccupied with whether they could... |
 
-2. Movies can often be associated with more than one genre. Create a this many-many relationsip between the `genres` table and the `movies`.
+2. Movies can often be associated with more than one genre. Create this many-many relationsip between the `genres` table and the `movies`.
 
 3. Insert some data about the film genres. Feel free to use the information in the table below:
 
