@@ -4,11 +4,11 @@ Video streaming services are all well and good, but they lack a certain physical
 
 Business is somewhat slow at the moment (surprisingly!) so we've been tasked to start thinking about how we store our data. At the moment we have the following three tables:
 
-- stores
+-   stores
 
-- customers
+-   customers
 
-- movies
+-   movies
 
 ## Task 1
 
@@ -16,9 +16,11 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 2. Query the database to find the oldest customer.
 
-3. Query the database to find the average rating of the movies released in the 1980s. **If there are any `null` ratings you should treat them as a 0 rating**
+3. Query the database to find the customers who's name begin with the letter _D_. Organise the results by age, youngest to oldest.
 
-4. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. **As this is a monetary value make sure it is rounded to 2 decimal places**
+4. Query the database to find the average rating of the movies released in the 1980s. **If there are any `null` ratings you should treat them as a 0 rating**
+
+5. The rise in living costs is affecting rentals, drop the cost of all rentals by 5% and display the updated table. **As this is a monetary value make sure it is rounded to 2 decimal places**
 
 > _**If you want to run the updates multiple times without going bankrupt, the data will need to be reset. We've added a bash script that will run all of the *.sql files in the ./db folder. Try running the command `./run-all.sh` from your terminal in the root of this repository. This will save the output of each *.sql file in the ./db directory to a \*.txt file of the same name.**_
 
@@ -28,16 +30,16 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 1. Create a `stock` table with the following columns:
 
-- `stock_id` - PK
-- `store_id` - FK
-- `movie_id` - FK
+-   `stock_id` - PK
+-   `store_id` - FK
+-   `movie_id` - FK
 
 2. Insert some data into this table. You'll want at least 15 rows (but the more the better) and some stores should have multiple copies. Here's some information to get you started:
 
-- The Leeds store has 2 copies of Toy Story, a copy of Pulp Fiction, 3 copies of Highlander and 2 copies of Star Wars episodes IV and IX.
-- The Manchester store has 1 copy of Toy Story, 2 copies of each of the Back To The Future films and a copy of Taxi Driver
-- The Newcastle store has 1 copy of Girl, Interrupted, 2 copies of Pulp Fiction and 1 copy of the Care Bears movie
-- The Birmingham store has 1 copy of each of the Star Wars films (I, IV and IX), 1 copy of Toy Story and 2 copies of the Breakfast Club
+-   The Leeds store has 2 copies of Toy Story, a copy of Pulp Fiction, 3 copies of Highlander and 2 copies of Star Wars episodes IV and IX.
+-   The Manchester store has 1 copy of Toy Story, 2 copies of each of the Back To The Future films and a copy of Taxi Driver
+-   The Newcastle store has 1 copy of Girl, Interrupted, 2 copies of Pulp Fiction and 1 copy of the Care Bears movie
+-   The Birmingham store has 1 copy of each of the Star Wars films (I, IV and IX), 1 copy of Toy Story and 2 copies of the Breakfast Club
 
 ## Task 3
 
@@ -108,7 +110,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 1. Query the database to find the store with store with the highest total copies of sequels.
 
-   > _Note: For now let's assume you can tell if a film is a sequel if the title contains something like 'II' or 'VI'._
+    > _Note: For now let's assume you can tell if a film is a sequel if the title contains something like 'II' or 'VI'._
 
 2. This is likely not a good way to identify sequels going forward. Alter the movies table to track this information better and then update previous query to make use of this new structure.
 
@@ -116,40 +118,58 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 1. Design a way of storing information on rentals. A rental should track the following information:
 
-   - rental_id
-   - stock_id
-   - rental_start
-   - rental_end
-   - customer_id
+    - rental_id
+    - stock_id
+    - rental_start
+    - rental_end
+    - customer_id
 
-   Add some rental rows we can query later.
+    Add some rental rows we can query later.
 
-2. Create an output with the following information:
+2. Create a single output with the following information:
+
+-   store_id, location, number of customers in the same location
+-   number of films available in store
+-   most valued customer (customer with the most rentals)
+-   most popular film (film with most rentals)
+-   average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
+
+_hint: it might be helpful to build up the query bullet point by bullet point_
 
 **If there are any `null` ratings you should treat them as a 0 rating!**
 
-- store_id, location, number of customers in the same location
-- number of films available in store
-- most valued customer (customer with the most rentals)
-- most popular film (film with most rentals)
-- average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
+3. Jersey is having a movie night and wishes to rend a film! However they are limited by number of factors:
 
-3. Jersey the puppy is having a movie night with all her puppy pals! Create an output which shows all the films in our database with an additional column that represents whether if a film is suitable or not.
+-   The film must be age appropriate (classification of U)
+-   The film must be available in Leicester.
+-   The film must not have been rented more than 5 times already
 
-**A film is suitable if the customer is old enough to watch the movie according the the age classification. Films rated `U` are suitable for all ages.**
+Instead of creating a list of only the films that match this criteria, create an output which marks `yes` or `no` in a column that represents the requirement. An example has been given below:
+
+| title   | age_appropriate | in_stock_nearby | not_too_mainstream |
+| ------- | --------------- | --------------- | ------------------ |
+| x-men 2 | no              | yes             | yes                |
 
 ## Task 7
 
 1. We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
 
-- Genre name
-- Film title
-- Rating
+-   Genre name
+-   Film title
+-   Rating
 
 2. Management is now trying to refine the quality of stock in the **Manchester** store particularly. Create an output that that shows:
 
-- Genre name
-- Film title
-- Rating
+-   Genre name
+-   Film title
+-   Rating
 
 **_If the store doesn't stock any films of a certain genre then do not include that genre in the output table._**
+
+## Task 8
+
+An Entitiy Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
+
+## Task 9
+
+Using `pg8000` build the following python functions:
