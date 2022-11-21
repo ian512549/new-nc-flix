@@ -43,7 +43,9 @@ VALUES
 ('Cat','1985-11-02', 'Manchester'),
 ('Alex','2001-06-24', 'Manchester'),
 ('Duncan', '1994-01-19', 'Manchester'),
-('Jersey', '2022-05-01', 'Leicester');
+('Jersey', '2022-05-01', 'Leicester'),
+('Paul C', '1991-03-28', 'Bolton'),
+('Haz', '1992-07-02', 'Bolton');
 
 
 INSERT INTO movies
