@@ -1,6 +1,6 @@
 # NC-flix
 
-This is a two day sprint designed to increase your knowledge of advanced PSQL queries. At the end of day one, regardless of your progress, move onto the day two task. If you complete the `pg-8000` steps, come back to your day one tasks.
+This is a two day sprint designed to increase your knowledge of advanced PSQL queries. After the lunch break on day two, regardless of your progress, move onto the Section Two tasks. If you complete the `pg-8000` steps, come back to your Section One tasks.
 
 ---
 
@@ -14,7 +14,7 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 -   movies
 
-# Day One
+# Section One
 
 ## Task 1
 
@@ -132,19 +132,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
     Add some rental rows we can query later.
 
-2. Create a single output with the following information:
-
--   store_id, location, number of customers in the same location
--   number of films available in store
--   most valued customer (customer with the most rentals)
--   most popular film (film with most rentals)
--   average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
-
-_hint: it might be helpful to build up the query bullet point by bullet point_
-
-**If there are any `null` ratings you should treat them as a 0 rating!**
-
-3. Jersey is having a movie night and wishes to rend a film! However they are limited by number of factors:
+2. Jersey is having a movie night and wishes to rend a film! However they are limited by number of factors:
 
 -   The film must be age appropriate (classification of U)
 -   The film must be available in Leicester.
@@ -158,25 +146,9 @@ Instead of creating a list of only the films that match this criteria, create an
 
 ## Task 7
 
-1. We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
-
--   Genre name
--   Film title
--   Rating
-
-2. Management is now trying to refine the quality of stock in the **Manchester** store particularly. Create an output that that shows:
-
--   Genre name
--   Film title
--   Rating
-
-**_If the store doesn't stock any films of a certain genre then do not include that genre in the output table._**
-
-## Task 8
-
 An Entity Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
 
-# Day Two
+# Section Two
 
 Using the `pg8000` library you can integrate your SQL querying skills with Python. You should build up each function feature by feature using TDD. You can consider your locally hosted database as a test database so we don't need to mock the connection. Any other helper functions should be tested individually.
 
@@ -204,3 +176,29 @@ The default order of the movies should be alphabetically by title.
 4. It should accept an optional `min_rating` argument which filters the list of movies to only contains movies with ratings greater than the passed value.
 
 5. It should accept an optional `location` argument which filters the list of movies to only return the movie titles available in that location.
+
+6. Query the Rental Information table you made in Task 6. Create a single output with the following information:
+
+-   store_id, location, number of customers in the same location
+-   number of films available in store
+-   most valued customer (customer with the most rentals)
+-   most popular film (film with most rentals)
+-   average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
+
+_hint: it might be helpful to build up the query bullet point by bullet point_
+
+**If there are any `null` ratings you should treat them as a 0 rating!**
+
+7. a) We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
+
+-   Genre name
+-   Film title
+-   Rating
+
+b) Management is now trying to refine the quality of stock in the **Manchester** store particularly. Create an output that that shows:
+
+-   Genre name
+-   Film title
+-   Rating
+
+**_If the store doesn't stock any films of a certain genre then do not include that genre in the output table._**
