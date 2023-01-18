@@ -1,5 +1,9 @@
 # NC-flix
 
+This is a two day sprint designed to increase your knowledge of advanced PSQL queries. At the end of day one, regardless of your progress, move onto the day two task. If you complete the `pg-8000` steps, come back to your day one tasks.
+
+---
+
 Video streaming services are all well and good, but they lack a certain physical quality. Not to miss out on a questionable business venture, Northcoders is bringing back the **video rental store**!
 
 Business is somewhat slow at the moment (surprisingly!) so we've been tasked to start thinking about how we store our data. At the moment we have the following three tables:
@@ -9,6 +13,8 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 -   customers
 
 -   movies
+
+# Day One
 
 ## Task 1
 
@@ -50,13 +56,13 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 | family     | Fun for everyone!                                              |
 | comedy     | A giggle a minute                                              |
 | romance    | I feel it in my fingers, I feel it in my toes                  |
-| fantasy    | There be elves and and witches                                 |
-| action     | Shooty shooty punchy punchy                                    |
+| fantasy    | There be elves and witches                                     |
+| action     | Shooty shooty, punchy punchy                                   |
 | drama      | Plot driven story time                                         |
 | crime      | Watch out, there's gangsters about                             |
 | sci_fi     | Your scientists were so preoccupied with whether they could... |
 
-2. Movies can often be associated with more than one genre. Create this many-many relationship between the `genres` table and the `movies`.
+2. Movies can often be associated with more than one genre. Create a many to many relationship between the `genres` table and the `movies` using a junction table.
 
 3. Insert some data about the film genres. Feel free to use the information in the table below:
 
@@ -86,7 +92,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 | Toy Story                          | Family               |
 | Groundhog Day                      | Comedy, Romance      |
 | A Fish Called Wanda                | Comedy, Crime        |
-| Independance Day                   | Action, Sci-Fi       |
+| Independence Day                   | Action, Sci-Fi       |
 
 ## Task 4
 
@@ -168,8 +174,33 @@ Instead of creating a list of only the films that match this criteria, create an
 
 ## Task 8
 
-An Entitiy Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
+An Entity Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
 
-## Task 9
+# Day Two
 
-Using `pg8000` build the following python functions:
+Using the `pg8000` library you can integrate your SQL querying skills with Python. You should build up each function feature by feature using TDD. You can consider your locally hosted database as a test database so we don't need to mock the connection. Any other helper functions should be tested individually.
+
+The happy and sad path should be considered. An error should be raised in the event an invalid query parameter has been passed.
+
+1. Create the function `select_movies`. It should return a list of movie dictionaries. From your locally hosted movies table.
+   Each movie should contain the following keys:
+
+-   movie_id
+-   title
+-   release_date
+-   rating
+-   classification
+
+The default order of the movies should be alphabetically by title.
+
+2. It should have an optional `sort_by` argument which allows it to be sorted by:
+
+-   release_date
+-   rating
+-   cost
+
+3. It should accept an optional `order` argument which allows the sort order to be flipped.
+
+4. It should accept an optional `min_rating` argument which filters the list of movies to only contains movies with ratings greater than the passed value.
+
+5. It should accept an optional `location` argument which filters the list of movies to only return the movie titles available in that location.
