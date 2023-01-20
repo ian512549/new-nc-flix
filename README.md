@@ -132,7 +132,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
     Add some rental rows we can query later.
 
-2. Jersey is having a movie night and wishes to rend a film! However they are limited by number of factors:
+2. Finally, we have a customer in one of our stores! They wish to rent a film but have some requirements:
 
 -   The film must be age appropriate (classification of U)
 -   The film must be available in Leicester.
