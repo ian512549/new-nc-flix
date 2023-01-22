@@ -1,6 +1,6 @@
 # NC-flix
 
-This is a two day sprint designed to increase your knowledge of advanced PSQL queries. After the lunch break on day two, regardless of your progress, move onto the Section Two tasks. If you complete the `pg-8000` steps, come back to your Section One tasks.
+This is a two day sprint designed to increase your knowledge of some more advanced SQL queries. After the lunch break on day two, regardless of your progress, move onto the Section Two tasks. If you complete the `pg-8000` steps, come back to your Section One tasks.
 
 ---
 
@@ -13,6 +13,8 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 -   customers
 
 -   movies
+
+-   stock
 
 # Section One
 
@@ -31,23 +33,6 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 > _**If you want to run the updates multiple times without going bankrupt, the data will need to be reset. We've added a bash script that will run all of the *.sql files in the ./db folder. Try running the command `./run-all.sh` from your terminal in the root of this repository. This will save the output of each *.sql file in the ./db directory to a \*.txt file of the same name.**_
 
 ## Task 2
-
-We need a way to keep track of stock across our stores. Each individual VHS tape (very retro, we know), should have it's own `stock_id` so that we know which copy is being rented. Also if a copy gets damaged/lost this means we'll know which one it is. Stores can (and should) stock multiple copies of the same film.
-
-1. Create a `stock` table with the following columns:
-
--   `stock_id` - PK
--   `store_id` - FK
--   `movie_id` - FK
-
-2. Insert some data into this table. You'll want at least 15 rows (but the more the better) and some stores should have multiple copies. Here's some information to get you started:
-
--   The Leeds store has 2 copies of Toy Story, a copy of Pulp Fiction, 3 copies of Highlander and 2 copies of Star Wars episodes IV and IX.
--   The Manchester store has 1 copy of Toy Story, 2 copies of each of the Back To The Future films and a copy of Taxi Driver
--   The Newcastle store has 1 copy of Girl, Interrupted, 2 copies of Pulp Fiction and 1 copy of the Care Bears movie
--   The Birmingham store has 1 copy of each of the Star Wars films (I, IV and IX), 1 copy of Toy Story and 2 copies of the Breakfast Club
-
-## Task 3
 
 1. Create a `genres` table with the following data:
 
@@ -94,7 +79,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 | A Fish Called Wanda                | Comedy, Crime        |
 | Independence Day                   | Action, Sci-Fi       |
 
-## Task 4
+## Task 3
 
 **If there are any `null` ratings you should treat them as a 0 rating!**
 
@@ -112,15 +97,15 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 
 7. Of the stores which exist in locations that have customers, calculate which store has the largest catalogue of stock. What is the most abundant genre in that store?
 
-## Task 5
+## Task 4
 
-1. Query the database to find the store with store with the highest total copies of sequels.
+1. Query the database to find the store the highest total number of copies of sequels.
 
     > _Note: For now let's assume you can tell if a film is a sequel if the title contains something like 'II' or 'VI'._
 
 2. This is likely not a good way to identify sequels going forward. Alter the movies table to track this information better and then update previous query to make use of this new structure.
 
-## Task 6
+## Task 5
 
 1. Design a way of storing information on rentals. A rental should track the following information:
 
@@ -135,7 +120,7 @@ We need a way to keep track of stock across our stores. Each individual VHS tape
 2. Finally, we have a customer in one of our stores! They wish to rent a film but have some requirements:
 
 -   The film must be age appropriate (classification of U)
--   The film must be available in Leicester.
+-   The film must be available in Birmingham.
 -   The film must not have been rented more than 5 times already
 
 Instead of creating a list of only the films that match this criteria, create an output which marks `yes` or `no` in a column that represents the requirement. An example has been given below:
@@ -144,7 +129,7 @@ Instead of creating a list of only the films that match this criteria, create an
 | ------- | --------------- | --------------- | ------------------ |
 | x-men 2 | no              | yes             | yes                |
 
-## Task 7
+## Task 6
 
 An Entity Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
 

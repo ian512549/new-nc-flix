@@ -25,6 +25,12 @@ CREATE TABLE movies (
   classification VARCHAR
 );
 
+CREATE TABLE stock (
+  stock_id SERIAL PRIMARY KEY,
+  store_id INT REFERENCES stores(store_id),
+  movie_id INT REFERENCES movies(movie_id)
+);
+
 INSERT INTO stores
 (city)
 VALUES
@@ -76,3 +82,44 @@ VALUES
 ('Groundhog Day', '1993-02-12', 7, 1.50, 'U'),
 ('A Fish Called Wanda', '1988-07-07', 7, 1.50, null),
 ('Independance Day', '1996-07-03', 7, 1.00, '15');
+
+INSERT INTO stock
+(store_id, movie_id)
+VALUES
+(1, 22),
+(1, 22),
+(1, 21),
+(1, 7),
+(1, 7),
+(1, 7),
+(1, 15),
+(1, 15),
+(1, 16),
+(1, 16),
+(2, 22),
+(2, 17),
+(2, 17),
+(2, 18),
+(2, 18),
+(2, 9),
+(2, 9),
+(2, 9),
+(2, 9),
+(2, 10),
+(3, 12),
+(3, 21),
+(3, 21),
+(3, 21),
+(3, 5),
+(4, 14),
+(4, 14),
+(4, 14),
+(4, 14),
+(4, 14),
+(4, 14),
+(4, 15),
+(4, 15),
+(4, 16);
+
+
+
