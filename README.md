@@ -162,7 +162,7 @@ The default order of the movies should be alphabetically by title.
 
 5. It should accept an optional `location` argument which filters the list of movies to only return the movie titles available in that location.
 
-6. Query the Rental Information table you made in Task 6. Create a single output with the following information:
+6. Query the Rental Information table you made in Task 5. Create a single output with the following information:
 
 -   store_id, location, number of customers in the same location
 -   number of films available in store
