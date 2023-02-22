@@ -43,7 +43,7 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 3. Query the database to retrieve all the films released in the 90s which have a rating greater than the total average.
 
-4. Query the database to find the number of copies in stock for the top rated film from a pool of the five most recently released films.
+4. Query the database to find the total number of copies that are in stock for the top rated film from a pool of the five most recently released films.
 
 5. Query the database to find a list of all the locations customers live in which **don't** contain a store.
 
