@@ -13,7 +13,8 @@ CREATE TABLE customers (
   customer_id SERIAL PRIMARY KEY,
   customer_name VARCHAR,
   date_of_birth DATE,
-  location VARCHAR
+  location VARCHAR,
+  loyalty_points INT
 );
 
 CREATE TABLE movies (
@@ -41,17 +42,19 @@ VALUES
 
 
 INSERT INTO customers
-(customer_name, date_of_birth, location)
+(customer_name, date_of_birth, location, loyalty_points)
 VALUES
-('David','1992-12-30', 'Leeds'),
-('Joe','1989-06-21', 'Liverpool'),
-('Verity','1997-01-07', 'Leicester'),
-('Cat','1985-11-02', 'Manchester'),
-('Alex','2001-06-24', 'Manchester'),
-('Duncan', '1994-01-19', 'Manchester'),
-('Jersey', '2022-05-01', 'Leicester'),
-('Paul C', '1991-03-28', 'Bolton'),
-('Haz', '1992-07-02', 'Bolton');
+('David','1992-12-30', 'Leeds', 202),
+('Joe','1989-06-21', 'Liverpool', 13),
+('Verity','1997-01-07', 'Leicester', null),
+('Cat','1985-11-02', 'Manchester',29),
+('Alex','2001-06-24', 'Manchester', 1045),
+('Duncan', '1994-01-19', 'Manchester', 99),
+('Vel', '1989-05-01', 'Leeds', 14),
+('Liam', '1993-10-03', 'Leeds', null),
+('Jim', '1989-05-01', 'Leeds', 14),
+('Paul C', '1991-03-28', 'Bolton', 198),
+('Haz', '1992-07-02', 'Bolton', null);
 
 
 INSERT INTO movies
@@ -106,6 +109,7 @@ VALUES
 (2, 9),
 (2, 9),
 (2, 10),
+(2, 10),
 (3, 12),
 (3, 21),
 (3, 21),
@@ -122,4 +126,79 @@ VALUES
 (4, 16);
 
 
+CREATE TABLE genres
+(
+    genre_id SERIAL PRIMARY KEY,
+    genre_name VARCHAR,
+    description TEXT
+);
 
+
+INSERT INTO genres
+(genre_name, description)
+VALUES
+('family', 'Fun for everyone!'),
+('comedy', 'A giggle a minute'),
+('romance', 'I feel it in my fingers, I feel it in my toes'),
+('fantasy', 'There be elves and witches'),
+('action', 'Shooty shooty, punchy punchy'),
+('drama', 'Plot driven story time'),
+('crime', 'Watch out, there''s gangsters about'),
+('sci_fi', 'Your scientists were so preoccupied with whether they could...');
+
+CREATE TABLE movies_genres
+(
+    movie_genre_id SERIAL PRIMARY KEY,
+    movie_id INT REFERENCES movies(movie_id),
+    genre_id INT REFERENCES genres(genre_id)
+);
+
+INSERT INTO movies_genres
+(movie_id, genre_id)
+VALUES
+(1, 1),
+(1, 2),
+(2, 2),
+(2, 6),
+(3, 2),
+(3, 6),
+(4, 1),
+(5, 1),
+(6, 4),
+(6, 5),
+(7, 4),
+(7, 5),
+(8, 3),
+(8, 6),
+(9, 2),
+(9, 6),
+(9, 7),
+(10, 6),
+(10, 7),
+(11, 2),
+(11, 3),
+(12, 6),
+(13, 4),
+(13, 5),
+(14, 5),
+(14, 8),
+(15, 5),
+(15, 8),
+(16, 5),
+(16, 8),
+(17, 2),
+(17, 8),
+(18, 2),
+(18, 8),
+(19, 6),
+(19, 7),
+(20, 5),
+(20, 4),
+(21, 7),
+(22, 1),
+(23, 2),
+(23, 3),
+(24, 2),
+(24, 7),
+(25, 5),
+(25, 8);
