@@ -13,7 +13,8 @@ CREATE TABLE customers (
   customer_id SERIAL PRIMARY KEY,
   customer_name VARCHAR,
   date_of_birth DATE,
-  location VARCHAR
+  location VARCHAR,
+  loyalty_points INT
 );
 
 CREATE TABLE movies (
@@ -41,17 +42,19 @@ VALUES
 
 
 INSERT INTO customers
-(customer_name, date_of_birth, location)
+(customer_name, date_of_birth, location, loyalty_points)
 VALUES
-('David','1992-12-30', 'Leeds'),
-('Joe','1989-06-21', 'Liverpool'),
-('Verity','1997-01-07', 'Leicester'),
-('Cat','1985-11-02', 'Manchester'),
-('Alex','2001-06-24', 'Manchester'),
-('Duncan', '1994-01-19', 'Manchester'),
-('Jersey', '2022-05-01', 'Leicester'),
-('Paul C', '1991-03-28', 'Bolton'),
-('Haz', '1992-07-02', 'Bolton');
+('David','1992-12-30', 'Leeds', 202),
+('Joe','1989-06-21', 'Liverpool', 13),
+('Verity','1997-01-07', 'Leicester', null),
+('Cat','1985-11-02', 'Manchester',29),
+('Alex','2001-06-24', 'Manchester', 1045),
+('Duncan', '1994-01-19', 'Manchester', 99),
+('Vel', '1989-05-01', 'Leeds', 14),
+('Liam', '1993-10-03', 'Leeds', null),
+('Jim', '1989-05-01', 'Leeds', 14),
+('Paul C', '1991-03-28', 'Bolton', 198),
+('Haz', '1992-07-02', 'Bolton', null);
 
 
 INSERT INTO movies
