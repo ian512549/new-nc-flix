@@ -51,7 +51,7 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 7. From a list of our stores which have customers living in the same location, calculate which store has the largest catalogue of stock. What is the most abundant genre in that store?
 
-## Task 4
+## Task 3
 
 1. Query the database to find the store the highest total number of copies of sequels.
 
@@ -59,28 +59,32 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 2. This is likely not a good way to identify sequels going forward. Alter the movies table to track this information better and then update previous query to make use of this new structure.
 
-## Task 5
+## Task 4
 
 1. Create an output to display the information on our customers. It should include:
 
 - name
 - location
 - loyalty membership status (see below)
+```
+# Loyalty membership tiers
 
-### Loyalty membership tiers
 - 'doesn't even go here' - 0 points
 - 'bronze status' - < 10 points
 - 'silver status' - 10 - 100 points
 - 'gold status' - > 100 points
+```
+_We can assume if the custom has no point information, they have yet to receive any loyalty points._
 
 2. We want more information on our customers:
 - name
 - age
 - location
 - loyalty points
+
 **... however(!) we would like to also like to order them by location and within their location groups, number of loyalty points, high to low.**
 
-## Task 6
+## Task 5
 
 1. Design a way of storing information on rentals. A rental should track the following information:
 
@@ -104,7 +108,7 @@ Instead of creating a list of only the films that match this criteria, create an
 | ------- | --------------- | --------------- | ------------------ |
 | x-men 2 | no              | yes             | yes                |
 
-## Task 7
+## Task 6
 
 An Entity Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
 
@@ -147,7 +151,6 @@ The default order of the movies should be alphabetically by title.
 
 _hint: it might be helpful to build up the query bullet point by bullet point_
 
-**If there are any `null` ratings you should treat them as a 0 rating!**
 
 7. a) We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
 

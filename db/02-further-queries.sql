@@ -1,25 +1,25 @@
 \c nc_flix
 
-\echo '\n The number of films in stock for each genre:'
+\echo '\n 1. The number of films in stock for each genre:'
 
 
-\echo '\n Here is the average rating for films in stock in Newcastle:'
+\echo '\n 2. Here is the average rating for films in stock in Newcastle:'
 
 
-\echo '\n Here are all the films made in 90s with above average rating available in Leeds'
+\echo '\n 3. Here are all the films made in 90s with above average rating available in Leeds'
 
 
-\echo '\n Here is the number of copies of the top rated film of the 5 most recently released films we have in stock across all stores:'
+\echo '\n 4. Here is the number of copies of the top rated film of the 5 most recently released films we have in stock across all stores:'
 
 
-\echo '\n These are the locations where our customers live which dont have stores:'
+\echo '\n 5. These are the locations where our customers live which dont have stores:'
 
 
-\echo '\n These are all the locations which our business has influences over'
+\echo '\n 6. These are all the locations which our business has influences over'
 
 
-\echo '\n This store has the highest quantity of stock:'
+\echo '\n 7a. This store has the highest quantity of stock:'
 
 
-\echo '\n ...and this is the most abundant genre in that store:'
+\echo '\n 7b. ...and this is the most abundant genre in that store:'
 
