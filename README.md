@@ -22,8 +22,7 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 2. Query the database to find the oldest customer.
 
-
-3. Query the database to find the customers who's name begin with the letter _D_. Organise the results by age, youngest to oldest.
+3. Query the database to find the customers who's name begins with the letter _D_. Organise the results by age, youngest to oldest.
 
 4. Query the database to find the average rating of the movies released in the 1980s.
 
@@ -33,9 +32,7 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 > _**If you want to run the updates multiple times without going bankrupt, the data will need to be reset. We've added a bash script that will run all of the *.sql files in the ./db folder. Try running the command `./run-all.sh` from your terminal in the root of this repository. This will save the output of each *.sql file in the ./db directory to a \*.txt file of the same name.**_
 
-
 ## Task 2
-
 
 1. Query the database to find the number of films in stock for each genre.
 
@@ -63,9 +60,10 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 1. Create an output to display the information on our customers. It should include:
 
-- name
-- location
-- loyalty membership status (see below)
+-   name
+-   location
+-   loyalty membership status (see below)
+
 ```
 # Loyalty membership tiers
 
@@ -74,13 +72,15 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 - 'silver status' - 10 - 100 points
 - 'gold status' - > 100 points
 ```
-_We can assume if the custom has no point information, they have yet to receive any loyalty points._
+
+_We can assume if the customer has no point information, they have yet to receive any loyalty points._
 
 2. We want more information on our customers:
-- name
-- age
-- location
-- loyalty points
+
+-   name
+-   age
+-   location
+-   loyalty points
 
 **... however(!) we would like to also like to order them by location and within their location groups, number of loyalty points, high to low.**
 
@@ -150,7 +150,6 @@ The default order of the movies should be alphabetically by title.
 -   average rating of each store (calculated as average of all films in store) rounded to **1 decimal place**
 
 _hint: it might be helpful to build up the query bullet point by bullet point_
-
 
 7. a) We are refining the quality of the films we currently have in our database by removing the lowest rated. Management has asked you to create an output with information about the lowest rated film of each genre:
 
