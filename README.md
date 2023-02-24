@@ -14,7 +14,9 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 -   genres
 
-    ![](base-erd.png)
+<!-- open in preview mode to see images -->
+
+![](base-erd.png)
 
 # Section One
 
