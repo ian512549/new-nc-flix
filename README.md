@@ -14,9 +14,7 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 -   genres
 
-<!-- open in preview mode to see images -->
-
-![](base-erd.png)
+An Entity Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Follow this link to see how the [NC-Flix database](https://dbdiagram.io/d/63f8ab04296d97641d837f2b) is structured.
 
 # Section One
 
@@ -111,10 +109,6 @@ Instead of creating a list of only the films that match this criteria, create an
 | title   | age_appropriate | in_stock_nearby | not_too_mainstream |
 | ------- | --------------- | --------------- | ------------------ |
 | x-men 2 | no              | yes             | yes                |
-
-## Task 6
-
-An Entity Relationship Diagram (ERD) is a good way to visualise the structure of a database and it's relationships. Use the following free software [dbdiagram.io](https://dbdiagram.io/home) to draw out the relationships between the different tables.
 
 # Section Two
 
