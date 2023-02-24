@@ -14,6 +14,8 @@ Business is somewhat slow at the moment (surprisingly!) so we've been tasked to 
 
 -   genres
 
+    ![](base-erd.png)
+
 # Section One
 
 ## Task 1
