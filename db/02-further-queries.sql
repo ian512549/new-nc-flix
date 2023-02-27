@@ -9,7 +9,7 @@
 \echo '\n 3. Here are all the films made in 90s with above average rating:'
 
 
-\echo '\n 4. Here is the number of copies of the top rated film of the 5 most recently released films we have in stock across all stores:'
+\echo '\n 4. Here is the number of copies of the top rated film of the 5 most recently released films we have in stock:'
 
 
 \echo '\n 5. These are the locations where our customers live which dont have stores:'
