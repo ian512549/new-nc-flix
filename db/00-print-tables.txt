@@ -1,0 +1,154 @@
+You are now connected to database "nc_flix" as user "ian".
+ customer_id | customer_name | date_of_birth |  location  | loyalty_points 
+-------------+---------------+---------------+------------+----------------
+           1 | David         | 1992-12-30    | Leeds      |            202
+           2 | Joe           | 1989-06-21    | Liverpool  |             13
+           3 | Verity        | 1997-01-07    | Leicester  |               
+           4 | Cat           | 1985-11-02    | Manchester |             29
+           5 | Alex          | 2001-06-24    | Manchester |           1045
+           6 | Duncan        | 1994-01-19    | Manchester |             99
+           7 | Vel           | 1989-05-01    | Leeds      |             14
+           8 | Liam          | 1993-10-03    | Leeds      |               
+           9 | Jim           | 1989-05-01    | Leeds      |             14
+          10 | Paul C        | 1991-03-28    | Bolton     |            198
+          11 | Haz           | 1992-07-02    | Bolton     |               
+(11 rows)
+
+ movie_id |               title                | release_date | rating | cost | classification 
+----------+------------------------------------+--------------+--------+------+----------------
+       16 | Episode IX - The Rise of Skywalker | 2019-12-20   |      3 | 1.19 | 15
+       11 | The Princess Switch                | 2018-11-16   |        | 0.95 | 
+        3 | Todo Sobre Mi Madre                | 2015-08-15   |      5 | 1.19 | 12
+        9 | Catch Me If You Can                | 2003-01-27   |      7 | 1.90 | 15
+       13 | The Fellowship of the Ring         | 2001-12-19   |      9 | 2.38 | 12
+       12 | Girl, Interrupted                  | 2000-03-24   |      8 | 1.90 | 12
+       14 | Episode I - The Phantom Menace     | 1999-05-19   |      7 | 1.43 | 
+        4 | The Lion King II: Simba's Pride    | 1998-10-26   |      1 | 1.43 | U
+       25 | Independance Day                   | 1996-07-03   |      7 | 0.95 | 15
+       22 | Toy Story                          | 1995-11-19   |     10 | 1.43 | U
+       21 | Pulp Fiction                       | 1994-05-21   |      5 | 1.90 | 
+       23 | Groundhog Day                      | 1993-02-12   |      7 | 1.43 | U
+        1 | Ghostbusters II                    | 1989-12-01   |        | 1.43 | U
+       18 | Back to the Future Part II         | 1989-11-22   |        | 1.66 | U
+       24 | A Fish Called Wanda                | 1988-07-07   |      7 | 1.43 | 
+        7 | Highlander                         | 1986-08-29   |      3 | 0.95 | 15
+        5 | The Care Bears Movie               | 1985-08-14   |     10 | 0.95 | 
+       17 | Back to the Future                 | 1985-07-03   |     10 | 2.38 | U
+        2 | The Breakfast Club                 | 1985-06-07   |      3 | 1.90 | 12
+        6 | Tron                               | 1982-10-21   |        | 1.90 | 15
+       20 | Raiders of the Lost Ark            | 1981-06-12   |      9 | 2.14 | 12
+       15 | Episode IV - A New Hope            | 1977-05-25   |     10 | 2.14 | 12
+       10 | Taxi Driver                        | 1976-08-19   |        | 0.95 | 15
+       19 | The Godfather                      | 1972-03-14   |     10 | 1.43 | 18
+        8 | Cleopatra                          | 1963-07-31   |      6 | 0.95 | U
+(25 rows)
+
+ genre_id | genre_name |                          description                           
+----------+------------+----------------------------------------------------------------
+        1 | family     | Fun for everyone!
+        2 | comedy     | A giggle a minute
+        3 | romance    | I feel it in my fingers, I feel it in my toes
+        4 | fantasy    | There be elves and witches
+        5 | action     | Shooty shooty, punchy punchy
+        6 | drama      | Plot driven story time
+        7 | crime      | Watch out, there's gangsters about
+        8 | sci_fi     | Your scientists were so preoccupied with whether they could...
+(8 rows)
+
+ movie_genre_id | movie_id | genre_id 
+----------------+----------+----------
+              1 |        1 |        1
+              2 |        1 |        2
+              3 |        2 |        2
+              4 |        2 |        6
+              5 |        3 |        2
+              6 |        3 |        6
+              7 |        4 |        1
+              8 |        5 |        1
+              9 |        6 |        4
+             10 |        6 |        5
+             11 |        7 |        4
+             12 |        7 |        5
+             13 |        8 |        3
+             14 |        8 |        6
+             15 |        9 |        2
+             16 |        9 |        6
+             17 |        9 |        7
+             18 |       10 |        6
+             19 |       10 |        7
+             20 |       11 |        2
+             21 |       11 |        3
+             22 |       12 |        6
+             23 |       13 |        4
+             24 |       13 |        5
+             25 |       14 |        5
+             26 |       14 |        8
+             27 |       15 |        5
+             28 |       15 |        8
+             29 |       16 |        5
+             30 |       16 |        8
+             31 |       17 |        2
+             32 |       17 |        8
+             33 |       18 |        2
+             34 |       18 |        8
+             35 |       19 |        6
+             36 |       19 |        7
+             37 |       20 |        5
+             38 |       20 |        4
+             39 |       21 |        7
+             40 |       22 |        1
+             41 |       23 |        2
+             42 |       23 |        3
+             43 |       24 |        2
+             44 |       24 |        7
+             45 |       25 |        5
+             46 |       25 |        8
+(46 rows)
+
+ stock_id | store_id | movie_id 
+----------+----------+----------
+        1 |        1 |       22
+        2 |        1 |       22
+        3 |        1 |       21
+        4 |        1 |        7
+        5 |        1 |        7
+        6 |        1 |        7
+        7 |        1 |       15
+        8 |        1 |       15
+        9 |        1 |       16
+       10 |        1 |       16
+       11 |        2 |       22
+       12 |        2 |       17
+       13 |        2 |       17
+       14 |        2 |       18
+       15 |        2 |       18
+       16 |        2 |        9
+       17 |        2 |        9
+       18 |        2 |        9
+       19 |        2 |        9
+       20 |        2 |       10
+       21 |        2 |       10
+       22 |        3 |       12
+       23 |        3 |       21
+       24 |        3 |       21
+       25 |        3 |       21
+       26 |        3 |        5
+       27 |        4 |       14
+       28 |        4 |       14
+       29 |        4 |       14
+       30 |        4 |       14
+       31 |        4 |       14
+       32 |        4 |       14
+       33 |        4 |       15
+       34 |        4 |       15
+       35 |        4 |       16
+(35 rows)
+
+ store_id |    city    
+----------+------------
+        1 | Leeds
+        2 | Manchester
+        3 | Newcastle
+        4 | Birmingham
+(4 rows)
+
